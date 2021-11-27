@@ -19,6 +19,9 @@
             width: 550px;
             height: 450px;
         }
+        h1{
+            text-decoration-line: underline;
+        }
         h3{
             position:absolute;
             bottom: 0;
@@ -27,7 +30,7 @@
     </style>
 </head>
 <body>
-    <h1>Be Inspiried</h1>;
+    <h1>Be Inspiried</h1>
     <?php
         $imgArr = array("image0.jpeg", "image1.jpeg", "image2.jpeg","image3.jpeg" );
         $quoteArr = array("The bad news is time flies. The good news is you’re the pilot.",
