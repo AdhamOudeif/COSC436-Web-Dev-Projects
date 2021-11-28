@@ -84,19 +84,16 @@ $years = $_GET["Years"];
         <p>At a rate of: <span class="white"><?php echo $rate; ?>%</span></p>
         <p>for <span class="white"><?php echo $years; ?></span> years</p>
     </div>
-
-    <script>
-        var p = "<?php echo $principle; ?>";
-        var r = "<?php echo $rate; ?>"
-        var n = "<?php echo $years; ?>"
-        document.write("<table><tr><th>Years</th><th>Money</th></tr>");
-        for (let j = 1; j <= "<?php echo $years; ?>"; j++) {
-            let calculation2 = p * Math.pow((1 + (r / 100)), j);
-            document.write("<tr><td>" + j + "</td><td>" + calculation2.toFixed(2) + "</td></tr>");
-            console.log(calculation2.toFixed(2));
+    <?php
+        echo ("<table><tr><th>Years</th><th>Money</th></tr>");
+        for ($j = 1; $j <= "$years"; $j++) {
+            $calculation2 = $principle * pow((1 + ($rate / 100)), $j);
+            echo("<tr><td>$j</td><td>" . number_format($calculation2,2,'.',"") .  "</td></tr>");
+            
         }
-        document.write("</table>")
-    </script>
+        echo("</table>");
+    ?>
+
 
 
     <p id="val"> </p>
