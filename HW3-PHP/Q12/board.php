@@ -28,7 +28,7 @@
     <table>
 
         <?php
-        $db = mysqli_connect("127.0.0.1", "root", "password2", "db1");
+        $db = mysqli_connect("localhost", "root", "pass", "cosc436");
 
         $query = "SELECT * FROM messages";
 
@@ -52,7 +52,7 @@
     </table>
     <br>
 
-    <form method="get" action="http://localhost:8000/update.php">
+    <form method="get" action="update.php">
         <input type="text" size="100" , maxlength="100" , name="message"></input>
         <input type="submit" value="Post Message"></input>
     </form>

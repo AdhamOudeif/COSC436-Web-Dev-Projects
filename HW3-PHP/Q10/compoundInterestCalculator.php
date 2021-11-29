@@ -1,8 +1,7 @@
 <?php
 include '../db_connection.php';
-$conn = OpenCon();
 echo ("<script>console.log('Connected Successfully');</script>");
-CloseCon($conn);
+
 
 $name = $_GET["Name"];
 $principle = $_GET["Principle"];
