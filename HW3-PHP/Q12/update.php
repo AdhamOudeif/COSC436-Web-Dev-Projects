@@ -24,7 +24,8 @@
     <table>
 
         <?php
-        $db = mysqli_connect("localhost", "root", "pass", "cosc436");
+        include '../db_connection.php';
+        echo ("<script>console.log('Connected Successfully');</script>");
 
         $message = $_GET["message"];
 
@@ -33,11 +34,11 @@
 
         $query = "INSERT INTO messages(date, message) VALUES('$date', '$message')";
 
-        $result = mysqli_query($db, $query);
+        $result = mysqli_query($conn, $query);
 
         $query = "SELECT * FROM messages";
 
-        $result = mysqli_query($db, $query);
+        $result = mysqli_query($conn, $query);
 
         $num_rows = mysqli_num_rows($result);
 
