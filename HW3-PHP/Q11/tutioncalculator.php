@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>Document</title>
 
     <style>
-         table {
+        table {
             width: 80%;
             margin: auto;
             background-color: snow;
@@ -18,61 +19,70 @@
             font-family: verdana;
 
         }
-        td,th{
+
+        td,
+        th {
             padding-top: 10px;
             padding-bottom: 10px;
         }
-        th{
-            background-color: rgb(220, 211, 199);
+        h1{
+            color: rgb(129, 85, 27);
         }
+
+        th {
+            background-color: rgb(220, 211, 199);
+            color: rgb(129, 85, 27);
+        }
+
         body {
             text-align: center;
             background-color: rgb(164, 177, 190);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color:  rgb(220, 211, 199);
+            color: rgb(220, 211, 199);
         }
     </style>
 </head>
+
 <body>
     <?php
-        if(($_POST["Credits"] < 1) || ($_POST["Credits"] > 18))
-            print("<p> Credits must be 1-18 </p>");
-        else if (empty($_POST["radioGroup"]))
-            print("<p> Must select Academic Status </p>");
-        else if (empty($_POST["radioGroup2"]))
-            print("<p> Must select State Status </p>");
-        else{ 
-            $credits = $_POST["Credits"];
-            $grad = $_POST["radioGroup"];
-            $state = $_POST["radioGroup2"];
+    if (($_POST["Credits"] < 1) || ($_POST["Credits"] > 18))
+        print("<p> Credits must be 1-18 </p>");
+    else if (empty($_POST["radioGroup"]))
+        print("<p> Must select Academic Status </p>");
+    else if (empty($_POST["radioGroup2"]))
+        print("<p> Must select State Status </p>");
+    else {
+        $credits = $_POST["Credits"];
+        $grad = $_POST["radioGroup"];
+        $state = $_POST["radioGroup2"];
 
-        if ($_POST["radioGroup"] == "Under-Grad")  
+        if ($_POST["radioGroup"] == "Under-Grad")
             $gradRate =  200;
         else
             $gradRate =  300;
 
-        if ($_POST["radioGroup2"] == "In-State")  
+        if ($_POST["radioGroup2"] == "In-State")
             $stateRate =  1;
         else
             $stateRate  =  2;
 
-        if (isset($_POST["Dorm"]))  
+        if (isset($_POST["Dorm"]))
             $dorm = 1000;
         else
             $dorm = 0;
 
-        if (isset($_POST["Dine"]))  
+        if (isset($_POST["Dine"]))
             $dine = 500;
         else
             $dine = 0;
-            
-        if (isset($_POST["Park"]))  
-            $park = 200; 
+
+        if (isset($_POST["Park"]))
+            $park = 200;
         else
             $park = 0;
 
         $tuition = ($credits * $gradRate * $stateRate);
-        $totalCost = $tuition + $dine + $dorm + $park;?>
+        $totalCost = $tuition + $dine + $dorm + $park; ?>
 
         <h1><u>Tuition Itemized Bill</u></h1>
         <table>
@@ -114,7 +124,8 @@
             </tr>
         </table>
     <?php
-        }
+    }
     ?>
 </body>
+
 </html>
