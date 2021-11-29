@@ -1,0 +1,92 @@
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url("./assets/sandstone.jpg");
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+    background-image: url("./assets/ss_Texture.jpg");
+}
+
+body.splash {
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ), url("./assets/index_bkg_Yemen.jpg");
+    background-size: cover;
+}
+
+h2.splash1 {
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 90px;
+}
+
+p.splash2 {
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+}
+
+div.centerStyle {
+    position: absolute;
+    top: 30%;
+    margin-left: 200px;
+    margin-right: 200px;
+   
+    
+}
+
+body.menu {
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ), url("./assets/Yemeni_Restaurant.jpg");
+    background-size: cover;
+}
+
+h2.menu {
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 90px;
+    top: 10%;
+}
+
+body.order {
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ), url("./assets/Yemeni_Diwan.jpg");
+    background-size: cover;
+}
+
+body.contact {
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ), url("./assets/ancientYemen.jpg");
+    background-size: cover;
+}

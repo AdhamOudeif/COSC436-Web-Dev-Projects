@@ -24,12 +24,12 @@
     <table>
 
         <?php
-        $db = mysqli_connect("127.0.0.1", "root", "password2", "db1");
+        $db = mysqli_connect("localhost", "root", "pass", "cosc436");
 
         $message = $_GET["message"];
 
         date_default_timezone_set("America/New_York");
-        $date = date("Y/m/d h:iA");
+        $date = date("Y/m/d");
 
         $query = "INSERT INTO messages(date, message) VALUES('$date', '$message')";
 
@@ -57,7 +57,7 @@
     </table>
     <br>
 
-    <form method="get" action="http://localhost:8000/update.php">
+    <form method="get" action="update.php">
         <input type="text" size="100" , maxlength="100" , name="message"></input>
         <input type="submit"></input>
     </form>
