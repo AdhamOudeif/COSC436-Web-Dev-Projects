@@ -46,73 +46,73 @@
             $grad = $_POST["radioGroup"];
             $state = $_POST["radioGroup2"];
 
-            if ($_POST["radioGroup"] == "Under-Grad")  
-                $gradRate =  200;
-            else
-                $gradRate =  300;
+        if ($_POST["radioGroup"] == "Under-Grad")  
+            $gradRate =  200;
+        else
+            $gradRate =  300;
 
-            if ($_POST["radioGroup2"] == "In-State")  
-                $stateRate =  1;
-            else
-                $stateRate  =  2;
+        if ($_POST["radioGroup2"] == "In-State")  
+            $stateRate =  1;
+        else
+            $stateRate  =  2;
 
-            if (isset($_POST["Dorm"]))  
-                $dorm = 1000;
-            else
-                $dorm = 0;
+        if (isset($_POST["Dorm"]))  
+            $dorm = 1000;
+        else
+            $dorm = 0;
 
-            if (isset($_POST["Dine"]))  
-                $dine = 500;
-            else
-                $dine = 0;
-                
-            if (isset($_POST["Park"]))  
-                $park = 200; 
-            else
-                $park = 0;
+        if (isset($_POST["Dine"]))  
+            $dine = 500;
+        else
+            $dine = 0;
+            
+        if (isset($_POST["Park"]))  
+            $park = 200; 
+        else
+            $park = 0;
 
-            $tuition = ($credits * $gradRate * $stateRate);
-            $totalCost = $tuition + $dine + $dorm + $park;?>
+        $tuition = ($credits * $gradRate * $stateRate);
+        $totalCost = $tuition + $dine + $dorm + $park;?>
 
-            <h1><u>Tuition Itemized Bill</u></h1>
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>Value</th>
-                </tr>
-                <tr>
-                    <td>Credits</td>
-                    <td><?php echo $credits ?></td>
-                </tr>
-                <tr>
-                    <td>Acadamic Status</td>
-                    <td> <?php echo $grad ?> </td>
-                </tr>
-                <tr>
-                    <td>State Status</td>
-                    <td> <?php echo $state ?> </td>
-                </tr>
-                <tr>
-                    <td>Tuition</td>
-                    <td>$<?php echo $tuition ?>.00</td>
-                </tr>
-                <tr>
-                    <td>Dorm</td>
-                    <td>$<?php echo $dorm ?>.00</td>
-                </tr>
-                <tr>
-                    <td>Dining</td>
-                    <td>$<?php echo $dine ?>.00</td>
-                </tr>
-                <tr>
-                    <td>Parking</td>
-                    <td>$<?php echo $park ?>.00</td>
-                </tr>
-                <tr>
-                    <td>Total Cost</td>
-                    <td>$<?php echo $totalCost ?>.00</td>
-                </tr>
-            </table>
+        <h1><u>Tuition Itemized Bill</u></h1>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Credits</td>
+                <td><?php echo $credits ?></td>
+            </tr>
+            <tr>
+                <td>Acadamic Status</td>
+                <td> <?php echo $grad ?> </td>
+            </tr>
+            <tr>
+                <td>State Status</td>
+                <td> <?php echo $state ?> </td>
+            </tr>
+            <tr>
+                <td>Tuition</td>
+                <td>$<?php echo $tuition ?>.00</td>
+            </tr>
+            <tr>
+                <td>Dorm</td>
+                <td>$<?php echo $dorm ?>.00</td>
+            </tr>
+            <tr>
+                <td>Dining</td>
+                <td>$<?php echo $dine ?>.00</td>
+            </tr>
+            <tr>
+                <td>Parking</td>
+                <td>$<?php echo $park ?>.00</td>
+            </tr>
+            <tr>
+                <td>Total Cost</td>
+                <td>$<?php echo $totalCost ?>.00</td>
+            </tr>
+        </table>
     <?php
         }
     ?>
