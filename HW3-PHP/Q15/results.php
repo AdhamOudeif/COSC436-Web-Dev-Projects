@@ -4,7 +4,7 @@ echo ("<script>console.log('Connected Successfully');</script>");
 
 $userEntry = $_GET["Password"];
 //get pass from db
-$query = "SELECT password FROM sitepasswords WHERE website='restaurant'";
+$query = "SELECT password FROM sitepasswords WHERE website='exam'";
 $pass2 = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($pass2);
 //set pass
@@ -62,17 +62,17 @@ $password = $row["password"];
     </style>
 </head>
 
-<body class="splash">
+<body>
     <?php 
     if($userEntry != $password){
-        print("<h2 class='splash1'>Incorrect Password</h2>");
+        print("<h2>Incorrect Password</h2>");
     }else{
-        echo ("<script>console.log('Welcome Employee');</script>"); ?>
+        echo ("<script>console.log('Welcome Student');</script>"); ?>
         <div style="margin: auto;">
-            <h2 class="splash1">Orders</h2>
+            <h2>Results</h2>
         </div>
     <?php
-         $query = "SELECT * FROM orders";
+         $query = "SELECT * FROM students";
 
          $result = mysqli_query($conn, $query);
  
@@ -82,35 +82,28 @@ $password = $row["password"];
          for ($i = 0; $i < $num_rows; $i++) {
              $row = mysqli_fetch_assoc($result);
  
-             $id = $row["id"];
              $name = $row["name"];
-             $creditcard = $row["creditcard"];
-             $address = $row["address"];
-             $food = $row["food"];
-             $prices = $row["prices"];
-             $total = $row["total"];
+             $scode = $row["code"];
+             $complete = $row["complete"];
+             $score = $row["score"];
             
+             if($complete == 1){
+                 $comp = "yes";
+             }else{
+                 $comp = "no";
+             }
             
              print "<tr><td>";
-             print "ID: #$id<br>";
              print "Name: $name<br>";
-             print "Credit Card: $creditcard<br>";
-             print "Address: $address<br>";
-             print "Food: $food<br>";
-             print "Prices: $prices<br>";
-             print "Total: $total<br>";
+             print "Code: $scode<br>";
+             print "Complete: $comp<br>";
+             print "Score: $score<br>";
              print "</td></tr>";
          }
          print "</table>";
     }
     ?>
      <br>
-
-<form method="get" action="updateOrders.php" style="margin-left: 45%;">
-    <input type="number" size="10" , maxlength="3" , name="orderID"></input>
-    <input type="submit" value="Update"></input>
-</form>
-    <!--Nav Bar-->
     
 
 
