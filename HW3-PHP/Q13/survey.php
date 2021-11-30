@@ -1,9 +1,10 @@
 <?php
-    include '../db_connection.php';
-    echo ("<script>console.log('Connected Successfully');</script>");
+include '../db_connection.php';
+echo ("<script>console.log('Connected Successfully');</script>");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,11 +23,13 @@
 
         }
 
-        td, th{
+        td,
+        th {
             padding-top: 10px;
             padding-bottom: 10px;
         }
-        h1{
+
+        h1 {
             color: rgb(129, 85, 27);
         }
 
@@ -41,42 +44,47 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: rgb(220, 211, 199);
         }
-        input{
+
+        input {
             background-color: rgb(209, 197, 181);
             padding: 10px;
             margin: 10px;
         }
     </style>
 </head>
+
 <body>
     <form method="post" action="update.php">
         <h1>Animal Survey</h1>
-        <table> 
+        <table>
             <?php
-                $query = "SELECT * FROM survey";
+            $query = "SELECT * FROM survey";
 
-                $result = mysqli_query($conn, $query);
+            $result = mysqli_query($conn, $query);
 
-                $num_rows = mysqli_num_rows($result);
+            $num_rows = mysqli_num_rows($result);
 
-                for ($i = 0; $i < $num_rows; $i++) {
-                    $row = mysqli_fetch_assoc($result);
-                    $id = $row['id'];
-                    $question = $row["question"];
+            for ($i = 0; $i < $num_rows; $i++) {
+                $row = mysqli_fetch_assoc($result);
+                $id = $row['id'];
+                $question = $row["question"];
             ?>
-            
+
                 <tr>
-                    <td><p><?php echo $question; ?> </p></td>
+                    <td>
+                        <p><?php echo $question; ?> </p>
+                    </td>
                     <td><input type="radio" name="<?php echo $id ?>" value="yes"> Yes</input></td>
                     <td><input type="radio" name="<?php echo $id ?>" value="no"> No</input></td>
                 </tr>
-            
-            <?php 
-                } ?> 
+
+            <?php
+            } ?>
         </table>
         <input placeholder="Passcode" name="passcode"></input>
         <input type="submit">
     </form>
-    
+
 </body>
+
 </html>

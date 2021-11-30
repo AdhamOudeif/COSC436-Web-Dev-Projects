@@ -1,8 +1,9 @@
 <?php
+//db connection
 include '../db_connection.php';
 echo ("<script>console.log('Connected Successfully');</script>");
 
-
+//GET values
 $name = $_GET["Name"];
 $principle = $_GET["Principle"];
 $rate = $_GET["Rate"];
@@ -74,7 +75,7 @@ $years = $_GET["Years"];
         }
     </style>
 </head>
-
+<!--display user info-->
 <body style="background-color: green;">
     <h1 style="text-align: center">Compound Interest Calculator</h1>
     <div class="a" id="displayInfo">
@@ -84,13 +85,13 @@ $years = $_GET["Years"];
         <p>for <span class="white"><?php echo $years; ?></span> years</p>
     </div>
     <?php
-        echo ("<table><tr><th>Years</th><th>Money</th></tr>");
-        for ($j = 1; $j <= "$years"; $j++) {
-            $calculation2 = $principle * pow((1 + ($rate / 100)), $j);
-            echo("<tr><td>$j</td><td>" . number_format($calculation2,2,'.',"") .  "</td></tr>");
-            
-        }
-        echo("</table>");
+    //create table
+    echo ("<table><tr><th>Years</th><th>Money</th></tr>");
+    for ($j = 1; $j <= "$years"; $j++) {
+        $calculation2 = $principle * pow((1 + ($rate / 100)), $j);
+        echo ("<tr><td>$j</td><td>" . number_format($calculation2, 2, '.', "") .  "</td></tr>");
+    }
+    echo ("</table>");
     ?>
 
 

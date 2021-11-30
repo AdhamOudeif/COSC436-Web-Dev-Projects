@@ -25,7 +25,8 @@
             padding-top: 10px;
             padding-bottom: 10px;
         }
-        h1{
+
+        h1 {
             color: rgb(129, 85, 27);
         }
 

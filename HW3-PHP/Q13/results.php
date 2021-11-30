@@ -1,4 +1,5 @@
 <?php
+//db conn
 include '../db_connection.php';
 echo ("<script>console.log('Connected Successfully');</script>");
 ?>
@@ -23,14 +24,17 @@ echo ("<script>console.log('Connected Successfully');</script>");
 
         }
 
-        td, th{
+        td,
+        th {
             padding-top: 10px;
             padding-bottom: 10px;
         }
-        th{
+
+        th {
             background-color: rgb(220, 180, 199);
         }
-        h1{
+
+        h1 {
             color: rgb(129, 85, 27);
         }
 
@@ -45,7 +49,6 @@ echo ("<script>console.log('Connected Successfully');</script>");
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: rgb(220, 211, 199);
         }
-        
     </style>
 </head>
 
@@ -74,7 +77,7 @@ echo ("<script>console.log('Connected Successfully');</script>");
                 <th>Yes Percentage</th>
                 <th>No Percentage</th>
             </tr>
-        <?php
+            <?php
 
             for ($i = 0; $i < $survey_num_rows; $i++) {
                 $row = mysqli_fetch_assoc($surveyResult);
@@ -84,17 +87,23 @@ echo ("<script>console.log('Connected Successfully');</script>");
 
                 $yesPer = round(($yes / $completions) * 100);
                 $noPer = round(($no / $completions) * 100);
-        ?>
+            ?>
                 <tr>
-                    <td> <p><?php echo $question; ?> </p></td>
-                    <td><p><?php echo $yesPer.'%'?></p></td>
-                    <td><p><?php echo $noPer.'%'?></p></td>
+                    <td>
+                        <p><?php echo $question; ?> </p>
+                    </td>
+                    <td>
+                        <p><?php echo $yesPer . '%' ?></p>
+                    </td>
+                    <td>
+                        <p><?php echo $noPer . '%' ?></p>
+                    </td>
                 <tr>
-                    
-        <?php
+
+            <?php
             }
         }
-        ?>
+            ?>
     </table>
 
 

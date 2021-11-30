@@ -11,10 +11,11 @@ echo ("<script>console.log('Connected Successfully');</script>");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Update</title>
     <style>
-        h3{
+        h3 {
             color: rgb(129, 85, 27);
             margin-top: 40%;
         }
+
         body {
             text-align: center;
             background-color: rgb(164, 177, 190);

@@ -6,26 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tuition costs</title>
-    
+
     <style>
         body {
             text-align: center;
             background-color: rgb(164, 177, 190);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color:  rgb(220, 211, 199);
+            color: rgb(220, 211, 199);
         }
 
         table {
             margin: auto;
             text-align: left;
         }
-        label{
+
+        label {
             color: snow;
         }
-        input{
+
+        input {
             background-color: rgb(209, 197, 181);
         }
-        h2, button{
+
+        h2,
+        button {
             color: rgb(129, 85, 27);
         }
     </style>
@@ -37,7 +41,7 @@
         <table>
             <tr>
                 <td><label>Enter Credits Amount: </label></td>
-                <td ><input size="17" type="text" name="Credits"></input></td>
+                <td><input size="17" type="text" name="Credits"></input></td>
             </tr>
             <tr>
                 <td><label>Select Student Satus: </label></td>

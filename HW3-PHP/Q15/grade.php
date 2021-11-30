@@ -2,6 +2,7 @@
 include '../db_connection.php';
 echo ("<script>console.log('Connected Successfully');</script>");
 
+//get user input
 $code = $_GET["code2"];
 
 $question1 = $_GET["Question0"];
@@ -10,7 +11,7 @@ $question3 = $_GET["Question2"];
 $question4 = $_GET["Question3"];
 $question5 = $_GET["Question4"];
 
-//get 
+//get code for comparison
 $query = "SELECT code FROM students WHERE code=$code";
 $userCode = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($userCode);

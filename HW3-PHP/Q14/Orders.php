@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../db_connection.php';
 echo ("<script>console.log('Connected Successfully');</script>");
 
@@ -63,55 +63,58 @@ $password = $row["password"];
 </head>
 
 <body class="splash">
-    <?php 
-    if($userEntry != $password){
+    <?php
+    //Check password
+    if ($userEntry != $password) {
         print("<h2 class='splash1'>Incorrect Password</h2>");
-    }else{
+    } else {
         echo ("<script>console.log('Welcome Employee');</script>"); ?>
         <div style="margin: auto;">
             <h2 class="splash1">Orders</h2>
         </div>
     <?php
-         $query = "SELECT * FROM orders";
+        //get all orders
+        $query = "SELECT * FROM orders";
 
-         $result = mysqli_query($conn, $query);
- 
-         $num_rows = mysqli_num_rows($result);
-         print "<table>";
-         print "<tr><th>List</th></tr>";
-         for ($i = 0; $i < $num_rows; $i++) {
-             $row = mysqli_fetch_assoc($result);
- 
-             $id = $row["id"];
-             $name = $row["name"];
-             $creditcard = $row["creditcard"];
-             $address = $row["address"];
-             $food = $row["food"];
-             $prices = $row["prices"];
-             $total = $row["total"];
-            
-            
-             print "<tr><td>";
-             print "ID: #$id<br>";
-             print "Name: $name<br>";
-             print "Credit Card: $creditcard<br>";
-             print "Address: $address<br>";
-             print "Food: $food<br>";
-             print "Prices: $prices<br>";
-             print "Total: $total<br>";
-             print "</td></tr>";
-         }
-         print "</table>";
+        $result = mysqli_query($conn, $query);
+
+        $num_rows = mysqli_num_rows($result);
+        //print orders in table
+        print "<table>";
+        print "<tr><th>List</th></tr>";
+        for ($i = 0; $i < $num_rows; $i++) {
+            $row = mysqli_fetch_assoc($result);
+
+            $id = $row["id"];
+            $name = $row["name"];
+            $creditcard = $row["creditcard"];
+            $address = $row["address"];
+            $food = $row["food"];
+            $prices = $row["prices"];
+            $total = $row["total"];
+
+
+            print "<tr><td>";
+            print "ID: #$id<br>";
+            print "Name: $name<br>";
+            print "Credit Card: $creditcard<br>";
+            print "Address: $address<br>";
+            print "Food: $food<br>";
+            print "Prices: $prices<br>";
+            print "Total: $total<br>";
+            print "</td></tr>";
+        }
+        print "</table>";
     }
     ?>
-     <br>
+    <br>
 
-<form method="get" action="updateOrders.php" style="margin-left: 45%;">
-    <input type="number" size="10" , maxlength="3" , name="orderID"></input>
-    <input type="submit" value="Update"></input>
-</form>
-    <!--Nav Bar-->
-    
+    <form method="get" action="updateOrders.php" style="margin-left: 45%;">
+        <input type="number" size="10" , maxlength="3" , name="orderID"></input>
+        <input type="submit" value="Update"></input>
+    </form>
+    <!--FORM TO OTHER SITE-->
+
 
 
 </body>

@@ -222,6 +222,3 @@ function phone($num) {
 }
 phone('313-502-2006');
 university('E-055G-9GG5');
-
-
-?>

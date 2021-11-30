@@ -30,7 +30,7 @@
         <?php
         include '../db_connection.php';
         echo ("<script>console.log('Connected Successfully');</script>");
-
+        //db connection
         $query = "SELECT * FROM messages";
 
         $result = mysqli_query($conn, $query);

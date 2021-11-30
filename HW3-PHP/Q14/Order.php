@@ -1,5 +1,5 @@
 <?php
-
+//db
 include '../db_connection.php';
 echo ("<script>console.log('Connected Successfully');</script>");
 
@@ -9,9 +9,10 @@ $name = $_POST["Name"];
 $creditcard = $_POST["creditcard"];
 $address = $_POST["address"];
 
+//array declarations
 $food = array();
 $foodPrice = array();
-
+//check in user input are T/F, then initialize variables and populate array
 if (isset($_POST["Haneeth"])=="on"){
     $haneeth = "Haneeth";
     $haneethPrice = 40;
@@ -67,8 +68,10 @@ $total=0;
 for($i=0; $i<count($foodPrice); $i++){
     $total += $foodPrice[$i];
 }
+//convert array to string
 $foodString= implode(", ",$food);
 $foodPriceString = implode(", ",$foodPrice);
+//update database
 $query = "INSERT INTO orders(name,creditcard,address,food,prices,total) VALUES('$name','$creditcard','$address','$foodString','$foodPriceString','$total')";
 $result = mysqli_query($conn,$query);
 ?>
@@ -123,7 +126,7 @@ $result = mysqli_query($conn,$query);
 </head>
 
 <body class="order">
-    <!--Nav Bar-->
+    <!--DISPLAY ORDER CONFIRMATION-->
     <div>
         <ul>
             <li><a href="index.html">Home</a></li>

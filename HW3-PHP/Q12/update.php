@@ -31,11 +31,11 @@
 
         date_default_timezone_set("America/New_York");
         $date = date("Y/m/d");
-
+        //update
         $query = "INSERT INTO messages(date, message) VALUES('$date', '$message')";
 
         $result = mysqli_query($conn, $query);
-
+        //display
         $query = "SELECT * FROM messages";
 
         $result = mysqli_query($conn, $query);

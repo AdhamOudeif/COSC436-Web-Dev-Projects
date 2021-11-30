@@ -29,6 +29,7 @@ $completed = $row2["complete"];
 </head>
 <body>
     <?php
+    //Checks
     if($codeUser != $code){
         print("<h2>Incorrect Password</h2>");
     }else if($completed == 1){
@@ -55,6 +56,7 @@ $completed = $row2["complete"];
              $answer4 = $row["answer4"];
              $correct = $row["correct"];
             
+             //set radio button name val
              $questionnum = "Question".$i;
              print_r($questionnum);
             

@@ -102,7 +102,7 @@ echo ("<script>console.log('Connected Successfully');</script>");
     <input type="number" size="10" , maxlength="3" , name="orderID"></input>
     <input type="submit" value="Update"></input>
 </form>
-    <!--Nav Bar-->
+    <!--UPDATE-->
     
 
 
