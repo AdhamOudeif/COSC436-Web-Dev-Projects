@@ -2,14 +2,6 @@
 include '../db_connection.php';
 echo ("<script>console.log('Connected Successfully');</script>");
 
-$userEntry = $_GET["Password"];
-//get pass from db
-$query = "SELECT password FROM sitepasswords WHERE website='restaurant'";
-$pass2 = mysqli_query($conn, $query);
-$row = mysqli_fetch_assoc($pass2);
-//set pass
-$password = $row["password"];;
-
 
 ?>
 <!DOCTYPE html>
@@ -63,15 +55,15 @@ $password = $row["password"];;
 </head>
 
 <body class="splash">
-    <?php 
-    if($userEntry != $password){
-        print("<h2 class='splash1'>Incorrect Password</h2>");
-    }else{
-        echo ("<script>console.log('Welcome Employee');</script>"); ?>
         <div style="margin: auto;">
             <h2 class="splash1">Orders</h2>
         </div>
     <?php
+        //update
+         $orderID = $_GET["orderID"];
+         $query = "DELETE FROM orders WHERE id = $orderID";
+         $result = mysqli_query($conn, $query);
+        //gen once again
          $query = "SELECT * FROM orders";
 
          $result = mysqli_query($conn, $query);
@@ -102,7 +94,7 @@ $password = $row["password"];;
              print "</td></tr>";
          }
          print "</table>";
-    }
+    
     ?>
      <br>
 
