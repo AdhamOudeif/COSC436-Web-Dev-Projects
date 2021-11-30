@@ -49,7 +49,8 @@
             print"<p>''$quote''</p>";
         }
 
-        $date = date("Y/m/d l h:ia");
+        date_default_timezone_set('America/Detroit');
+        $date = date("m/d/Y l h:ia");
         print"<h3>$date</h3>";   
     ?>
 </body>
