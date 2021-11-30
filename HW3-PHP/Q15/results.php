@@ -23,41 +23,42 @@ $password = $row["password"];
     <title>Employee Login</title>
     <link href="styles.css" rel="StyleSheet">
     <style>
-        table {
-            border: 1px #a39485 solid;
-            font-size: 1.5em;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-            width: 400px;
-            height: 200px;
-            border-collapse: collapse;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-left: auto;
-            margin-right: auto;
+      table {
+            width: 70%;
+            margin: auto;
+            background-color: snow;
+            color: rgb(164, 177, 190);
+            margin-top: 60px;
             text-align: center;
-            margin-top: 150px;
+            font-size: 130%;
+            font-family: verdana;
+
         }
 
         td,
         th {
-            padding: 1em .5em;
-            vertical-align: middle;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
-        td {
-            border-bottom: 1px solid rgba(0, 0, 0, .1);
-            background: #fff;
-            color: black;
+        th {
+            background-color: rgb(220, 180, 199);
+        }
+
+        h2 {
+            color: rgb(129, 85, 27);
         }
 
         tr {
-            background-color: #73685d;
-            font-weight: bold;
-            color: #fff;
+            background-color: rgb(220, 211, 199);
+            color: rgb(129, 85, 27);
         }
 
-        td:hover {
-            background-color: goldenrod;
+        body {
+            text-align: center;
+            background-color: rgb(164, 177, 190);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(220, 211, 199);
         }
     </style>
 </head>

@@ -34,6 +34,21 @@ $completed = $row2["complete"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam Complete</title>
+    <style>
+    h2 {
+            color: rgb(129, 85, 27);
+        }
+
+        input {
+            background-color: rgb(220, 211, 199);
+        }
+
+        body {
+            text-align: center;
+            background-color: rgb(164, 177, 190);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        </style>
 </head>
 <body>
     <?php

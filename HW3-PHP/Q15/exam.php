@@ -26,6 +26,45 @@ $completed = $row2["complete"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table {
+            width: 70%;
+            margin: auto;
+            background-color: snow;
+            color: rgb(164, 177, 190);
+            margin-top: 60px;
+            text-align: left;
+            font-size: 130%;
+            font-family: verdana;
+
+        }
+
+        td,
+        th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        th {
+            background-color: rgb(220, 180, 199);
+        }
+
+        h1 {
+            color: rgb(129, 85, 27);
+        }
+
+        tr {
+            background-color: rgb(220, 211, 199);
+            color: rgb(129, 85, 27);
+        }
+
+        body {
+            text-align: center;
+            background-color: rgb(164, 177, 190);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(220, 211, 199);
+        }
+    </style>
 </head>
 <body>
     <?php
