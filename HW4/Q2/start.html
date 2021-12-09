@@ -6,24 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Credits</title>
+
     <style>
         body{
+            background-color: skyblue;
+            color: lavenderblush;
             text-align: center;
         }
-        form{
-            margin-top: 100px;
+        h1{
+            font-size: 30px;
+            color: black;
         }
 
-
+        #button {
+            width: 10%;
+            margin-left: 45%;
+            margin-right: 45%;
+            background-color: lavenderblush;
+        }
     </style>
 </head>
 
 <body>
     <div>
         <h1>Welcome</h1>
-        <form action="status.php" method="post">
-            <h3>The the number of credits:</h3>
-            <input type="number" id="credit" name="credit" value="0" min="1" required><br>
+        <form action="status.php" method="get">
+            <h3>The The Number of Credits</h3>
+            <input type="text" name="Credits" value="0" min="1" required><br>
             <br><input type="submit" name="submitBtn" value="Next">
         </form>
     
