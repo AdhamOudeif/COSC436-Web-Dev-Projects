@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Compound Interest Calculator</h3>
+    <table>
+    <tr>
+    <td><label for="amount">Amount: </label></td>
+    <td><input type="text" id="amount"></input></td>
+    </tr>
+    <tr>
+    <td><label for="interest:">Interest: </label></td>
+    <td><input type="text" id="interest"></input></td>
+    </tr>
+    <tr>
+    <td><label for="years">Years: </label></td>
+    <td><input type="text" id="years"></input></td>
+    </tr>
+    </table>
+    <br>
+    <button onclick="compoundInterest()">Get Compound Interest</button>
+    
+    <p id = "val"> </p>
+
+</body>
+</html>
+<script>
+function compoundInterest(){
+    let p = document.getElementById("amount").value
+    let r = document.getElementById("interest").value
+    let n = document.getElementById("years").value
+    let calculation = p * Math.pow((1+(r/100)),n);
+    //return calculation;
+    document.getElementById("val").innerHTML = calculation.toFixed(2);
+}
+</script>

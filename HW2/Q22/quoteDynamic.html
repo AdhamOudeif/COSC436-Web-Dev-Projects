@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: rgb(157, 7, 7);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        div.header {
+            height: 200px;
+            text-align: center;
+        }
+
+        div.middle {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            height: 325px;
+        }
+
+        div.nav {
+            position: absolute;
+            text-align: center;
+            top: 20%;
+            left: 5%;
+            height: 200px;
+            width: 23%;
+        }
+
+        div.aside {
+            position: absolute;
+            text-align: center;
+            top: 20%;
+            right: 10%;
+            height: 200px;
+            width: 20%;
+        }
+
+        div.main {
+            position: absolute;
+            top: 10px;
+            left: 30%;
+            height: 300px;
+            width: 35%;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        div.main img {
+            float: right;
+            margin-top: 25px;
+        }
+
+        div.main p {
+            margin-top: 20%;
+            font-style: italic;
+        }
+
+        div.footer {
+            height: 200px;
+            text-align: center;
+        }
+        div.top{
+            position: absolute;
+            text-align: center;
+            top: 1%;
+            right: 1%;
+            height: 200px;
+            width: 10%;
+            font-size: 25px;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        h3 {
+            font-size: 25px;
+            text-decoration-line: underline;
+        }
+
+        a {
+            color: white;
+            font-size: 20px;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+
+        function myFunction() {
+            var count = 1;
+            let quoteArr =["A Coward Dies A Thousand Deaths, A Soldier Dies But Once",
+                            "Our future is our confidence and self-esteem.",
+                            "They have money for war but can’t feed the poor.",
+                            "Reality is wrong. Dreams are for real.",
+                            "Life is a wheel of fortune and it’s my turn to spin it.",
+                            "Ain’t a woman alive that could take my mama’s place.",
+                            "If you can make it through the night, there’s a brighter day.",
+                            "Always do your best, don’t let the pressure make you panic",
+                            "Just cause you live in the ghetto doesn’t mean you can’t grow.",
+                            "We can never go nowhere unless we share with each other."];
+            
+            document.getElementById("quote").innerHTML = "\""+quoteArr[Math.floor(Math.random() * 10)] + "\" ~Tupac Shakur";
+
+            var x = new Date();
+            var displayDate = x.getHours() +":" + x.getMinutes()+ ":" + x.getSeconds(); 
+            document.getElementById("time").innerHTML = displayDate;
+               
+            var animationId = setInterval(animate, 10000);
+
+            function animate() {
+                document.getElementById("quote").innerHTML = "\""+quoteArr[Math.floor(Math.random() * 10)] + "\" ~Tupac Shakur";
+
+                var x = new Date();
+                var displayDate = x.getHours() +":" + x.getMinutes()+ ":" + x.getSeconds(); 
+                document.getElementById("time").innerHTML =  displayDate;
+               
+            }
+        }
+    </script>
+</head>
+
+<body onload="myFunction()">
+    <h1> <b>Different Sites</b> </h1>
+    <div class="top">
+        <p id="time"> </p>
+    </div>
+    <div class="header">
+        <h3>Social Media </h3>
+        <p><a href="https://www.facebook.com/" target="_blank">Facebook </a></p>
+        <p><a href="https://twitter.com/" target="_blank">Twitter </a></p>
+        <p><a href="https://www.instagram.com/" target="_blank">Instagram </a></p>
+        <p><a href="https://www.pinterest.com/">Pinterest </a></p>
+    </div>
+
+    <div class="middle">
+        <div class="main">
+            <img src="HW2\Q22\tupacImage.jpeg" alt="image of tupac  shakur">
+            <p id="quote"></p>
+        </div>
+
+        <div class="aside">
+            <h3> Shopping </h3>
+            <p><a href="https://www.amazon.com/" target="_blank">Amazone</a></p>
+            <p><a href="https://tjmaxx.tjx.com/" target="_blank">Tj Maxx</a></p>
+            <p><a href="https://oldnavy.gap.com/" target="_blank">Old navy</a></p>
+            <p><a href="https://www.carters.com/" target="_blank">Carters </a></p>
+        </div>
+
+        <div class="nav">
+            <h3> Education </h3>
+            <p><a href="https://www.emich.edu/" target="_blank">Education </a></p>
+            <p><a href="https://wayne.edu/" target="_blank">Wayne State University </a></p>
+            <p><a href="https://umich.edu/" target="_blank">University of Michigan </a></p>
+            <p><a href="https://www.cmich.edu/" target="_blank">Central Michigan University </a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3> Entertainment </h3>
+        <p><a href="https://www.netflix.com/" target="_blank"> Netflex </a></p>
+        <p><a href="https://www.showtime.com/" target="_blank">Showtime </a></p>
+        <p><a href="https://www.popcornflix.com/" target="_blank">Popcorn Flix </a></p>
+        <p><a href="https://www.sling.com/" target="_blank">Sling TV </a></p>
+    </div>
+
+
+</body>
+
+</html>

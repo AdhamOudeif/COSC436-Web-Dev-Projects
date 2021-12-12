@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Budget your university cost">
+    <meta name="keywords" content="Budget, university">
+    <title>university-budget</title>
+    <h3 style="text-align:center;font-family:'Times New Roman', Times, serif; font-size:180%">Estimate your Cost of Attending a University</h3>
+    <style>
+        body {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            border-spacing: 15px;
+        }
+        td{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><label for="credits">Credits: </label></td>
+            <td><input type="text" id="credits"></input></td>
+        </tr>
+        <tr>
+            <td><label for="status">Student Status: </label></td>
+            <td>
+                <input type="radio" id="grad" name="status">Graduate</input>
+                <input type="radio" id="undergrad" name="status">Under Graduate</input>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="status">Residency Status: </label></td>
+            <td>
+                <input type="radio" id="instate" name="Residency">In-State</input>
+                <input type="radio" id="outstate" name="Residency">Out-of-State</input>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="amenities">Amenities: </label></td>
+            <td>
+                <input type="checkbox" id="dorm"> Dorm </input> 
+                <input type="checkbox" id="dining"> Dining </input> 
+                <input type="checkbox" id="parking"> Parking </input> 
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="estimateUniCost()" >Calculate Estimated Cost of University</button>
+    <p id="uniCost"> </p>
+
+</body>
+</html>
+<script>
+    function estimateUniCost(){
+    let credits = document.getElementById("credits").value;
+    //statusRadio
+    var grad = document.getElementById("grad");
+    var undergrad = document.getElementById("undergrad");
+    //residencyRadio
+    var instate = document.getElementById("instate");
+    var outstate = document.getElementById("outstate");
+    //amenitiesCheckBox
+    let dorm = document.getElementById("dorm");
+    let dining = document.getElementById("dining");
+    let parking = document.getElementById("parking");
+    
+    //declare vars
+    var creditCost=0;
+    var residencyMultiplier=0;
+    let dormCost = dorm.checked ? 1000 : 0;
+    let diningCost = dining.checked ? 500 : 0;
+    let parkingCost = parking.checked ? 200 : 0;
+
+    //set vars
+    if (grad.checked){
+        creditCost = 300;
+    }else if (undergrad.checked){
+        creditCost = 200;
+    }
+
+    if(instate.checked){
+        residencyMultiplier = 1;
+    }else if (outstate.checked){
+        residencyMultiplier = 2;
+    }
+
+    //final calculation
+
+    let uniCost = ((credits * creditCost) * residencyMultiplier) + dormCost + diningCost + parkingCost;
+    document.getElementById("uniCost").innerHTML = uniCost;
+}
+</script>

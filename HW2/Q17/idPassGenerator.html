@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id and Password Generator</title>
+
+    <style>
+        
+        body {
+            background-color: rgb(164, 177, 190);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:  rgb(220, 211, 199);
+        }
+        span{
+           color: red;
+           font-size: 13px;
+        }
+        input[type=text]{
+            margin-left: 44%;
+            background-color: rgb(220, 211, 199);
+        }
+        button{
+            margin-left: 44%;
+            color: rgb(129, 85, 27);
+            font-weight: bold;
+
+        }
+        h2{
+            text-align: center;
+            color: rgb(129, 85, 27);
+        }
+    </style>
+    <script>
+        function idPassword() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var phoneNum = document.getElementById("phone").value;
+
+            if (phoneNum.search(/^\d{3}-\d{3}-\d{4}$/) === 0 &&
+                fname.search(/^[A-Za-z][A-Za-z]+$/) === 0 &&
+                lname.search(/^[A-Za-z][A-Za-z]+$/) === 0){
+
+                    let id = fname.charAt(0) + lname;
+                    let pw = fname.charAt(fname.length - 1) + lname.substring(0, 3) + phoneNum.substring(phoneNum.length-4, phoneNum.length);
+
+                    document.getElementById("output1").innerHTML = 'ID: ' + id.toUpperCase();
+                    document.getElementById("output2").innerHTML = 'Password: ' + pw.toUpperCase();
+            }else{
+                if(fname.search(/^[A-Za-z][A-Za-z]+$/) != 0)
+                    document.getElementById("error1").innerHTML = "*Must Be 2+ Alphabetical Characters";
+                if(lname.search(/^[A-Za-z][A-Za-z]+$/) != 0)
+                    document.getElementById("error2").innerHTML = "*Must Be 2+ Alphabetical Characters";
+                if(phoneNum.search(/^\d{3}-\d{3}-\d{4}$/) != 0)
+                    document.getElementById("error3").innerHTML = "*Must Be This Format is xxx-xxx-xxxx";
+            }
+        }
+
+    </script>
+ 
+</head>
+
+<body>
+    <h2>Id & Password Generator</h2>
+    <br><input type="text" id="fname" maxlength="10" placeholder="First Name"><span id="error1"></span></input><br>
+    <br><input type="text" id="lname" maxlength="10" placeholder="Last Name"><span id="error2"></span></input><br>
+    <br><input type="text" id="phone" maxlength="12" placeholder="Phone Number"><span id="error3"></span></input><br>
+    <br>
+
+    <br><button onclick="idPassword()">Generate ID & Password</button>
+    <p id="output1"> </p>
+    <p id="output2"> </p>
+</body>
+
+</html>

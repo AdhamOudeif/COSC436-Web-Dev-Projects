@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id and Password Generator</title>
+
+    <style>
+        body {
+            background-color: rgb(164, 177, 190);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(220, 211, 199);
+        }
+
+        span {
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        input[type=text] {
+            margin-left: 44%;
+            background-color: skyblue;
+        }
+
+        h2,
+        p {
+            text-align: center;
+            color: rgb(129, 85, 27);
+        }
+    </style>
+    <script>
+        function idPassword() {
+            var fname = document.getElementById("fname").value;
+            var fname1 = document.getElementById("fname");
+            var lname = document.getElementById("lname").value;
+            var lname1 = document.getElementById("lname");
+            var phoneNum = document.getElementById("phone").value;
+            var phoneNum1 = document.getElementById("phone");
+
+            if (fname.search(/^[A-Za-z][A-Za-z]+$/) === 0)
+                fname1.style.background = "skyblue";
+
+            if (fname.search(/^[A-Za-z][A-Za-z]+$/) != 0) {
+                fname1.style.background = "red";
+                document.getElementById("output1").innerHTML = '';
+                document.getElementById("output2").innerHTML = '';
+            }
+
+            if (lname.search(/^[A-Za-z][A-Za-z]+$/) === 0)
+                lname1.style.background = "skyblue";
+
+            if (lname.search(/^[A-Za-z][A-Za-z]+$/) != 0) {
+                lname1.style.background = "red";
+                document.getElementById("output1").innerHTML = '';
+                document.getElementById("output2").innerHTML = '';
+            }
+
+            if (phoneNum.search(/^\d{3}-\d{3}-\d{4}$/) === 0)
+                phoneNum1.style.background = "skyblue";
+
+            if (phoneNum.search(/^\d{3}-\d{3}-\d{4}$/) != 0) {
+                phoneNum1.style.background = "red";
+                document.getElementById("output1").innerHTML = '';
+                document.getElementById("output2").innerHTML = '';
+            }
+
+
+            if (fname.search(/^[A-Za-z][A-Za-z]+$/) === 0 &&
+                lname.search(/^[A-Za-z][A-Za-z]+$/) === 0 &&
+                phoneNum.search(/^\d{3}-\d{3}-\d{4}$/) === 0) {
+
+                let id = fname.charAt(0) + lname;
+                let pw = fname.charAt(fname.length - 1) + lname.substring(0, 3) + phoneNum.substring(phoneNum.length - 4, phoneNum.length);
+
+                document.getElementById("output1").innerHTML = 'ID: ' + id.toUpperCase();
+                document.getElementById("output2").innerHTML = 'Password: ' + pw.toUpperCase();
+            }
+        }
+        function myFunction1(message) {
+            var f1 = document.getElementById("format1");
+            var f2 = document.getElementById("format2");
+            var f3 = document.getElementById("format3");
+
+            if (message == 1)
+                f1.innerHTML = "*Format is 2+ Alphabetical Characters";
+            else
+                f1.innerHTML = "";
+
+            if (message == 2)
+                f2.innerHTML = "*Format is 2+ Alphabetical Characters";
+            else
+                f2.innerHTML = "";
+
+            if (message == 3)
+                f3.innerHTML = "*Format is xxx-xxx-xxxx";
+            else
+                f3.innerHTML = "";
+
+        }
+        function myFunction2(activity) {
+            var fname = document.getElementById("fname");
+            var lname = document.getElementById("lname");
+            var phone = document.getElementById("phone");
+
+            if (activity == 1)
+                fname.style.background = "white";
+
+            if (activity == 2)
+                lname.style.background = "white";
+
+            if (activity == 3)
+                phone.style.background = "white";
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <h2>Id & Password Generator</h2>
+    <br><input type="text" id="fname" maxlength="10" placeholder="First Name" onmouseover="myFunction1(1)"
+        onmouseout="myFunction1(4)" onfocus="myFunction2(1)" onchange="idPassword()">
+    <span id="format1"></span></input><br>
+
+    <br><input type="text" id="lname" maxlength="10" placeholder="Last Name" onmouseover="myFunction1(2)"
+        onmouseout="myFunction1(4)" onfocus="myFunction2(2)" onchange="idPassword()">
+    <span id="format2"></span></input><br>
+
+    <br><input type="text" id="phone" maxlength="12" placeholder="Phone Number" onmouseover="myFunction1(3)"
+        onmouseout="myFunction1(4)" onfocus="myFunction2(3)" onchange="idPassword()">
+    <span id="format3"></span></input><br>
+    <br>
+
+    <p id="output1"> </p>
+    <p id="output2"> </p>
+</body>
+
+</html>

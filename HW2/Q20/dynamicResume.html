@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Software Developer Hire.">
+    <meta name="keywords" content="Resume">
+    <title>Adham-Oudeif-Dynamic-Resume</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        div {
+            background-color: bisque;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        div {
+            margin: auto;
+            padding: 15px;
+
+        }
+
+        p.dynamic {
+            color: #4FB4D0;
+            background: #135364;
+            margin-top: 5px;
+            padding-left: 5px;
+            font-size: 20px;
+            display: inline;
+            float: left;
+            padding-right: 9px;
+            clear: both;
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<!--Body Gets Full Color Background, Div blocks get different Color-->
+
+<body onclick="boxBoi()">
+    <p class="dynamic" id="moveBox">testText</p>
+    <div>
+        <h1>Adham Oudeif</h1>
+        <hr>
+        <h3>Email: adhamoudeif@gmail.com | Phone: 480-295-1973 | Address: 6735 Loon Hollow Ct, Ypsilanti Michigan 48197
+        </h3>
+    </div>
+    <br>
+    <div>
+        <div>
+            <h3>Education:</h3>
+            <h4>Eastern Michigan University - Bachelors Degree in Computer Science</h4>
+            <p>Learning Software and web development with a focus on Java. Attended from 2019 and will graduate in
+                December of 2021.</p>
+            <br>
+        </div>
+        <hr>
+        <div>
+            <h3>Computer Skills:</h3>
+            <p>I have been into programming and computers since I was young. I have a year of industry experience in
+                software developemt. Some of my skills listed are: </p>
+            <ul>
+                <li>Front End Development with Vue.js</li>
+                <li>Back End Development with Javascript/PHP</li>
+                <li>Programming Andriod Applications with Java</li>
+                <li>Acceptance and Unit Testing</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h3>Courses:</h3>
+            <p>I have completed most of my major courses for the CS program, and only have 3 classes left. Some of the
+                courses I have completed are:</p>
+            <ul>
+                <li>Data Structures & Algorithms</li>
+                <li>Capstone Project</li>
+                <li>Mobile Development on Android with Java</li>
+                <li>Software Architecture</li>
+            </ul>
+        </div>
+        <hr>
+        <!--First Three Links are to another page, last one is a live game-->
+        <div>
+            <h3>Projects:</h3>
+            <p>I have done many projects at school as well as on my own. Here are some of them:</p>
+            <ol style="text-align: center;">
+                <li> Mocha Management - LAMP Stack Web Application for
+                    Scheduling and Inventory</li><br>
+                <li>Weather Tracker - Vue.js Application that pulls data using
+                    WeatherStack API</li><br>
+                <li>Java Application that organizes files utilizing a number of data
+                    Structures and Algorithms such as Linked Lists, Stacks and Queues.</li><br>
+                <li>Bounce
+                    Ball Game</li>
+            </ol>
+        </div>
+        <hr>
+        <div>
+            <h3>Work Experience</h3>
+            <p>I have a plethroa of work experience in and out of my field of study, with a strong expertise in sales.
+                More recently I have gotten an internship that has helped me develop as a CS Student </p>
+            <ul>
+                <li>Service Express: Software Development, Software Support, Intern Project</li>
+                <li>Samsung: Sales Manager, Inventory, Product Promotion</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <h3>Extra Curricular</h3>
+            <p>I like to do something outside of school, some of which are:</p>
+            <ul>
+                <li>Jiu Jitsu</li>
+                <li>Filming</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    function boxBoi() {
+        var p = document.getElementById("moveBox");
+        var s = ["www.google.com", "www.tesla.com", "www.GM.com", "www.yahoo.com", "www.serviceexpress.com", "www.facebook.com",
+            "www.emich.edu", "www.2k.com", "www.youtube.tv", "www.spacex.com"];
+        var randomItem = s[Math.floor(Math.random() * s.length)];
+        if (p.style.visibility == "visible") {
+            p.style.visibility = "hidden";
+        }
+        else {
+            p.style.visibility = "visible";
+            var left = event.clientX;
+            var top = event.clientY;
+            left = left - 50;
+            top = top - 20;
+            p.style.left = left + "px";
+            p.style.top = top + "px";
+            document.getElementById("moveBox").innerHTML = randomItem;
+        }
+
+
+    }
+</script>
